@@ -1,2 +1,1 @@
-# alx-system_engineering-devops
-Shell basics
+A repository to explore shell basics
