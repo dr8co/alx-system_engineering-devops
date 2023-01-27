@@ -6,15 +6,14 @@
 /**
  * infinite_while - Run an infinite while loop.
  *
- * Return: Always 0.
+ * Return: No return
  */
-int infinite_while(void)
+void infinite_while(void)
 {
 	while (1)
 	{
 		sleep(1);
 	}
-	return (0);
 }
 
 /**
