@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Run nginx as user 'Nginx' instead of default 'root'
-pkill apache2
-sed -i 's/80 default_server/8080 default_server/' /etc/nginx/sites-available/default
-chown nginx:nginx /etc/nginx/nginx.conf
-chown 755 /etc/nginx/nginx.conf
+pkill -f apache2
+chmod 644 /etc/nginx/nginx.conf
+sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
+sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-enabled/default
 sudo -u nginx service nginx restart
