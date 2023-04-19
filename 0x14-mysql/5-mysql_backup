@@ -7,6 +7,3 @@ mysqldump --all-databases -u root -p"$1" > backup.sql
 # Compress the dump
 file_name="$(date +%d-%m-%Y)"
 tar -czvf "$file_name.tar.gz" backup.sql
-
-# Clean up
-rm backup.sql
