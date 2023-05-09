@@ -16,6 +16,9 @@ def count_words(subreddit, word_list, after=None, word_count={}):
     headers = {"User-Agent": "dr8c00"}
     response = requests.get(url, headers=headers, allow_redirects=False,
                             params={"after": after})
+    if after is None:
+        word_list = list(set([word.lower() for word in word_list]))
+
     if response.status_code == 200:
         for post in response.json().get("data").get("children"):
             title = post.get("data").get("title").lower()
