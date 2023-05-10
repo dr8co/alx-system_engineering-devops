@@ -2,5 +2,5 @@
 
 exec { 'fix-phpp':
   command => 'sed -i s/phpp/php/g /var/www/wp-settings.php',
-  path    => '/bin/:/usr/bin/'
+  path    => '/usr/local/bin/:/usr/bin/:/bin/',
 }
